@@ -1,23 +1,49 @@
 <html>
-    <head>
-        <title>Vickans Bucket</title>
+  <head>
+    <title>Vickans Bucket</title>
 
-        <style>
-            body {
-                background-color: black;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-            h1 {
-                color: green;
-                font-weight: bold;
-            }
-        </style>
-    </head>
+      p {
+        color: yellow;
+        font-weight: bold;
+        font-size: 74px;
+      }
+    </style>
 
-    <body>
-        <h1>Vickans Bucket</h1>
-    </body>
+    <script>
+      var countDownDate = new Date("Mar 12, 2019 00:00:00").getTime();
+
+      var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById(
+          "countDown"
+        ).innerHTML = `${days} days \& ${hours}:${minutes}:${seconds}`;
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countDown").innerHTML = "Count down expired";
+        }
+      }, 1000);
+    </script>
+  </head>
+
+  <body>
+    <p id="countDown"></p>
+  </body>
 </html>
