@@ -44,3 +44,8 @@ function countDown() {
     ).innerHTML = `${days} days \& ${hours}:${minutes}:${seconds}`;
   }
 }
+
+function popShape() {
+  var element = document.getElementById("ballon");
+  element.parentNode.removeChild(element);
+}

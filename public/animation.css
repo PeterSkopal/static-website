@@ -1,0 +1,34 @@
+.shape {
+  position: absolute;
+  left: 0;
+  display: block;
+  top: 0;
+  font-size: 6em;
+  transition: all 1s ease-in-out;
+  animation: aniAcross 37s infinite, aniUpDown 7s infinite;
+}
+
+
+@keyframes aniAcross {
+  0% {
+    left: -10%;
+  }
+  50% {
+    left: 110%;
+  }
+  100% {
+    left: -10%;
+  }
+}
+
+@keyframes aniUpDown {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 10%;
+  }
+  100% {
+    top: -1%;
+  }
+}
